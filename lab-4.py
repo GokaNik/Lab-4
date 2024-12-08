@@ -3,10 +3,9 @@ class Item:
         self.name = name
         self.size = size
         self.points = points
-        self.value=points/size
 
 
-def knapsack(items, capacity):
+def knapsack(items, capacity): #Функция динамически считает наибольшее значение очков
     n = len(items)
 
     DP = [[0] * (capacity) for _ in range(n)]
@@ -36,7 +35,7 @@ def knapsack(items, capacity):
     return DP, mx_ind,mx
 
 
-def get_items(DP,items):
+def get_items(DP,items): # Функция возвращает список предметов
     DP,ind,mx=DP
 
     n = len(items)-1
